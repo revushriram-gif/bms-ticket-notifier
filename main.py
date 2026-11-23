@@ -173,7 +173,7 @@ def fetch_bms(event_code, date_code, region_code, region_slug,
                             params=params, timeout=15)
         if resp.status_code == 200:
             return resp.json()
-        print(f"  HTTP {resp.status_code}")
+                 print(f"  HTTP {resp.status_code}")         print(f"  Content-Type: {resp.headers.get('Content-Type', 'unknown')}")         preview = re.sub(r"\s+", " ", resp.text[:500]).strip()         if preview:             print(f"  Response preview: {preview[:300]}")
     except requests.RequestException as e:
         print(f"  Request failed: {e}")
     return None
