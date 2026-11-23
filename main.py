@@ -573,8 +573,8 @@ def main():
         all_shows.extend(parse_shows(data))
 
     if not all_shows:
-        print("  ❌ No showtimes found.")
-        sys.exit(0)
+    print("  ❌ No showtimes retrieved.")
+    sys.exit(1)
 
     print(f"  🎬 {movie_info['name']}  {movie_info['language']}")
 
