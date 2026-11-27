@@ -506,6 +506,16 @@ def main():
 
         all_shows.extend(shows)
 
+        print("DEBUG: DATA KEYS:", data.keys())
+print("DEBUG: INNER DATA KEYS:", data.get("data", {}).keys())
+
+widgets = data.get("data", {}).get("showtimeWidgets", [])
+
+print("DEBUG: SHOWTIME WIDGET COUNT:", len(widgets))
+
+for widget in widgets:
+    print("DEBUG: WIDGET TYPE:", widget.get("type"))
+
         print(f"Retrieved {len(shows)} showtimes.")
 
     # Never overwrite the previous state if all requests fail.
